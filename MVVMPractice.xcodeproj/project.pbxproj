@@ -37,6 +37,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF7DBC0B2A49B6C1001595AC /* GoodNews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GoodNews;
+			sourceTree = "<group>";
+		};
 		EFACBB162A432CE80072CF9F = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +70,7 @@
 				EFACBB2B2A432CE90072CF9F /* Assets.xcassets */,
 				EFACBB2D2A432CE90072CF9F /* LaunchScreen.storyboard */,
 				EFACBB302A432CE90072CF9F /* Info.plist */,
+				EF7DBC0B2A49B6C1001595AC /* GoodNews */,
 			);
 			path = MVVMPractice;
 			sourceTree = "<group>";
