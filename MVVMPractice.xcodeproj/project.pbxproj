@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF7DBC132A49B937001595AC /* NewsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DBC122A49B937001595AC /* NewsListTableViewController.swift */; };
+		EF7DBC152A49BAC0001595AC /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DBC142A49BAC0001595AC /* ArticleTableViewCell.swift */; };
+		EF7DBC172A49BBA8001595AC /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DBC162A49BBA8001595AC /* Article.swift */; };
+		EF7DBC192A49BBD8001595AC /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DBC182A49BBD8001595AC /* ArticleViewModel.swift */; };
+		EF7DBC1B2A49BE1D001595AC /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DBC1A2A49BE1D001595AC /* Webservice.swift */; };
 		EFACBB232A432CE80072CF9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFACBB222A432CE80072CF9F /* AppDelegate.swift */; };
 		EFACBB252A432CE80072CF9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFACBB242A432CE80072CF9F /* SceneDelegate.swift */; };
 		EFACBB272A432CE80072CF9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFACBB262A432CE80072CF9F /* ViewController.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF7DBC122A49B937001595AC /* NewsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewController.swift; sourceTree = "<group>"; };
+		EF7DBC142A49BAC0001595AC /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		EF7DBC162A49BBA8001595AC /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		EF7DBC182A49BBD8001595AC /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		EF7DBC1A2A49BE1D001595AC /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		EFACBB1F2A432CE80072CF9F /* MVVMPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFACBB222A432CE80072CF9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFACBB242A432CE80072CF9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,8 +50,53 @@
 		EF7DBC0B2A49B6C1001595AC /* GoodNews */ = {
 			isa = PBXGroup;
 			children = (
+				EF7DBC112A49B8CC001595AC /* Model */,
+				EF7DBC0E2A49B8AC001595AC /* ViewModel */,
+				EF7DBC0C2A49B884001595AC /* Controller */,
+				EF7DBC102A49B8BA001595AC /* Service */,
+				EF7DBC0F2A49B8B5001595AC /* Cell */,
 			);
 			path = GoodNews;
+			sourceTree = "<group>";
+		};
+		EF7DBC0C2A49B884001595AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EF7DBC122A49B937001595AC /* NewsListTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EF7DBC0E2A49B8AC001595AC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF7DBC182A49BBD8001595AC /* ArticleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EF7DBC0F2A49B8B5001595AC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EF7DBC142A49BAC0001595AC /* ArticleTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EF7DBC102A49B8BA001595AC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EF7DBC1A2A49BE1D001595AC /* Webservice.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		EF7DBC112A49B8CC001595AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF7DBC162A49BBA8001595AC /* Article.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		EFACBB162A432CE80072CF9F = {
@@ -146,8 +201,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF7DBC152A49BAC0001595AC /* ArticleTableViewCell.swift in Sources */,
+				EF7DBC132A49B937001595AC /* NewsListTableViewController.swift in Sources */,
+				EF7DBC1B2A49BE1D001595AC /* Webservice.swift in Sources */,
+				EF7DBC172A49BBA8001595AC /* Article.swift in Sources */,
 				EFACBB272A432CE80072CF9F /* ViewController.swift in Sources */,
 				EFACBB232A432CE80072CF9F /* AppDelegate.swift in Sources */,
+				EF7DBC192A49BBD8001595AC /* ArticleViewModel.swift in Sources */,
 				EFACBB252A432CE80072CF9F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

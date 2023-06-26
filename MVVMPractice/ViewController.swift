@@ -29,7 +29,17 @@ class ViewController: UITableViewController {
         cell.contentConfiguration = content
 
         return cell
-        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            print("index 0")
+            let newsVC = NewsListTableViewController()
+            self.navigationController?.pushViewController(newsVC, animated: true)
+        default:
+            print("default")
+        }
     }
 }
 
