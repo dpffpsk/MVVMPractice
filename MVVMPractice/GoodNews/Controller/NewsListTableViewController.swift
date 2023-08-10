@@ -14,7 +14,10 @@ class NewsListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "ArticleTableViewCell")
+        self.navigationItem.title = "GoodNews"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        self.tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "cell")
         
         setup()
     }
@@ -46,21 +49,10 @@ class NewsListTableViewController: UITableViewController {
             fatalError("ArticleTableViewCell not found")
         }
         
-        
-        
-        print("=========\(self.articleListVM.articles[indexPath.row].title)")
-        print("=========\(self.articleListVM.articles[indexPath.row].description)")
-
-//        cell.titleLabel.text = "asdfadfsadsf"
-//        cell?.titleLabel.text = "adsfads"
-//        if let title = self.articleListVM.articles[indexPath.row].title {
-//            print(title)
-//            cell.titleLabel?.text = "asdadsfa"
-//        }
-        
-//        if let description = self.articleListVM.articles[indexPath.row].description {
-//            cell.descriptionLabel?.text = description
-//        }
+        var content = cell.defaultContentConfiguration()
+        content.text = self.articleListVM.articles[indexPath.row].title
+        content.secondaryText = self.articleListVM.articles[indexPath.row].description
+        cell.contentConfiguration = content
         
         return cell
     }
