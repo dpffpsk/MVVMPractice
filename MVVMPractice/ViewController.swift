@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    let list = ["GoodNews"]
+    let list = ["GoodNews", "Orders"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,11 @@ class ViewController: UITableViewController {
             print("index 0")
             let newsVC = NewsListTableViewController()
             self.navigationController?.pushViewController(newsVC, animated: true)
+        case 1:
+            print("index 1")
+//            let orderVC = OrdersTableViewController()
+            let orderVC = AddOrderViewController()
+            self.navigationController?.pushViewController(orderVC, animated: true)
         default:
             print("default")
         }

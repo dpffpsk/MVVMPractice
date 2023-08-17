@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B38EFBBD2A85F48D00812875 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */; };
+		B38EFBBF2A85F53B00812875 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */; };
+		B38EFBC22A85FA2800812875 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B38EFBC12A85FA2800812875 /* SnapKit */; };
 		EF7DBC132A49B937001595AC /* NewsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DBC122A49B937001595AC /* NewsListTableViewController.swift */; };
 		EF7DBC152A49BAC0001595AC /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DBC142A49BAC0001595AC /* ArticleTableViewCell.swift */; };
 		EF7DBC172A49BBA8001595AC /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DBC162A49BBA8001595AC /* Article.swift */; };
@@ -21,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
+		B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 		EF7DBC122A49B937001595AC /* NewsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewController.swift; sourceTree = "<group>"; };
 		EF7DBC142A49BAC0001595AC /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		EF7DBC162A49BBA8001595AC /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -41,12 +46,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B38EFBC22A85FA2800812875 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B38EFBB92A85D1A200812875 /* HotCoffee */ = {
+			isa = PBXGroup;
+			children = (
+				B38EFBBA2A85F38F00812875 /* Controllers */,
+			);
+			path = HotCoffee;
+			sourceTree = "<group>";
+		};
+		B38EFBBA2A85F38F00812875 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */,
+				B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		EF7DBC0B2A49B6C1001595AC /* GoodNews */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +148,7 @@
 				EFACBB2B2A432CE90072CF9F /* Assets.xcassets */,
 				EFACBB2D2A432CE90072CF9F /* LaunchScreen.storyboard */,
 				EFACBB302A432CE90072CF9F /* Info.plist */,
+				B38EFBB92A85D1A200812875 /* HotCoffee */,
 				EF7DBC0B2A49B6C1001595AC /* GoodNews */,
 			);
 			path = MVVMPractice;
@@ -146,6 +170,9 @@
 			dependencies = (
 			);
 			name = MVVMPractice;
+			packageProductDependencies = (
+				B38EFBC12A85FA2800812875 /* SnapKit */,
+			);
 			productName = MVVMPractice;
 			productReference = EFACBB1F2A432CE80072CF9F /* MVVMPractice.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +201,9 @@
 				Base,
 			);
 			mainGroup = EFACBB162A432CE80072CF9F;
+			packageReferences = (
+				B38EFBC02A85FA2800812875 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = EFACBB202A432CE80072CF9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -208,7 +238,9 @@
 				EFACBB272A432CE80072CF9F /* ViewController.swift in Sources */,
 				EFACBB232A432CE80072CF9F /* AppDelegate.swift in Sources */,
 				EF7DBC192A49BBD8001595AC /* ArticleViewModel.swift in Sources */,
+				B38EFBBF2A85F53B00812875 /* AddOrderViewController.swift in Sources */,
 				EFACBB252A432CE80072CF9F /* SceneDelegate.swift in Sources */,
+				B38EFBBD2A85F48D00812875 /* OrdersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +458,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B38EFBC02A85FA2800812875 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B38EFBC12A85FA2800812875 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B38EFBC02A85FA2800812875 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EFACBB172A432CE80072CF9F /* Project object */;
 }
