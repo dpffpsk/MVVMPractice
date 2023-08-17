@@ -10,6 +10,7 @@
 		B38EFBBD2A85F48D00812875 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */; };
 		B38EFBBF2A85F53B00812875 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */; };
 		B38EFBC22A85FA2800812875 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B38EFBC12A85FA2800812875 /* SnapKit */; };
+		B3A015232A8E04C200031470 /* CoffeeWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A015222A8E04C200031470 /* CoffeeWebService.swift */; };
 		EF7DBC132A49B937001595AC /* NewsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DBC122A49B937001595AC /* NewsListTableViewController.swift */; };
 		EF7DBC152A49BAC0001595AC /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DBC142A49BAC0001595AC /* ArticleTableViewCell.swift */; };
 		EF7DBC172A49BBA8001595AC /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DBC162A49BBA8001595AC /* Article.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
+		B3A015222A8E04C200031470 /* CoffeeWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeWebService.swift; sourceTree = "<group>"; };
 		EF7DBC122A49B937001595AC /* NewsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewController.swift; sourceTree = "<group>"; };
 		EF7DBC142A49BAC0001595AC /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		EF7DBC162A49BBA8001595AC /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		B38EFBB92A85D1A200812875 /* HotCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				B3A015212A8E02A800031470 /* Services */,
 				B38EFBBA2A85F38F00812875 /* Controllers */,
 			);
 			path = HotCoffee;
@@ -68,6 +71,14 @@
 				B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B3A015212A8E02A800031470 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B3A015222A8E04C200031470 /* CoffeeWebService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		EF7DBC0B2A49B6C1001595AC /* GoodNews */ = {
@@ -235,6 +246,7 @@
 				EF7DBC132A49B937001595AC /* NewsListTableViewController.swift in Sources */,
 				EF7DBC1B2A49BE1D001595AC /* Webservice.swift in Sources */,
 				EF7DBC172A49BBA8001595AC /* Article.swift in Sources */,
+				B3A015232A8E04C200031470 /* CoffeeWebService.swift in Sources */,
 				EFACBB272A432CE80072CF9F /* ViewController.swift in Sources */,
 				EFACBB232A432CE80072CF9F /* AppDelegate.swift in Sources */,
 				EF7DBC192A49BBD8001595AC /* ArticleViewModel.swift in Sources */,
