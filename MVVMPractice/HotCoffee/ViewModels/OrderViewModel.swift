@@ -37,9 +37,11 @@ extension OrderViewModel {
     
     var type: String {
         return self.order.type.rawValue.capitalized
+//        return self.order.type
     }
     
     var size: String {
         return self.order.size.rawValue.capitalized
+//        return self.order.size
     }
 }

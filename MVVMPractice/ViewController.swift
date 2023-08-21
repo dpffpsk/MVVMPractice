@@ -37,8 +37,8 @@ class ViewController: UITableViewController {
             self.navigationController?.pushViewController(newsVC, animated: true)
         case 1:
             print("index 1")
-//            let orderVC = OrdersTableViewController()
-            let orderVC = AddOrderViewController()
+            let orderVC = OrdersTableViewController()
+//            let orderVC = AddOrderViewController()
             self.navigationController?.pushViewController(orderVC, animated: true)
         default:
             print("default")

@@ -21,6 +21,7 @@ class AddOrderViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = "Add New Order"
+        self.view.backgroundColor = .white
         
         setupAttribute()
         setupLayout()
