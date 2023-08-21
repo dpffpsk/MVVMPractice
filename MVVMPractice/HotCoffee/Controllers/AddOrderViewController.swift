@@ -17,11 +17,12 @@ class AddOrderViewController: UIViewController {
     let cancelButton = UIBarButtonItem()
     let saveButton = UIBarButtonItem()
     
+    var vm = AddCoffeeOrderViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "Add New Order"
-        self.view.backgroundColor = .white
         
         setupAttribute()
         setupLayout()
@@ -33,7 +34,9 @@ class AddOrderViewController: UIViewController {
         view.addSubview(firstTextField)
         view.addSubview(secondTextField)
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "order")
+        view.backgroundColor = .systemBackground
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "AddOrderCell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
@@ -52,7 +55,7 @@ class AddOrderViewController: UIViewController {
         saveButton.title = "Save"
         saveButton.style = .done
         
-        navigationItem.setRightBarButton(cancelButton, animated: true)
+        navigationItem.setLeftBarButton(cancelButton, animated: true)
         navigationItem.setRightBarButton(saveButton, animated: true)
     }
     
@@ -88,10 +91,17 @@ class AddOrderViewController: UIViewController {
 extension AddOrderViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.vm.types.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddOrderCell", for: indexPath)
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = self.vm.types[indexPath.row]
+        cell.contentConfiguration = content
+        
+        return cell
     }
 }

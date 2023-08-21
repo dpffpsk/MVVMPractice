@@ -25,6 +25,7 @@ class OrdersTableViewController: UITableViewController {
         button.imageView?.contentMode = .scaleAspectFit
         button.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
         
+        button.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
         let addButton = UIBarButtonItem(customView: button)
         navigationItem.setRightBarButton(addButton, animated: true)
         
@@ -51,6 +52,13 @@ class OrdersTableViewController: UITableViewController {
             }
         }
     }
+    
+    @objc private func tappedButton() {
+        let modalVC = AddOrderViewController()
+        let naviVC = UINavigationController(rootViewController: modalVC)
+        self.present(naviVC, animated: true)
+    }
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

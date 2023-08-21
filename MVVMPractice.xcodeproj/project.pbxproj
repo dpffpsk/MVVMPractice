@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B30C5B272A933F4100E1FFE1 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C5B262A933F4100E1FFE1 /* OrderCell.swift */; };
+		B30C5B292A9341A600E1FFE1 /* AddCoffeeOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C5B282A9341A600E1FFE1 /* AddCoffeeOrderViewModel.swift */; };
 		B38EFBBD2A85F48D00812875 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */; };
 		B38EFBBF2A85F53B00812875 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */; };
 		B38EFBC22A85FA2800812875 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B38EFBC12A85FA2800812875 /* SnapKit */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		B30C5B262A933F4100E1FFE1 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		B30C5B282A9341A600E1FFE1 /* AddCoffeeOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeOrderViewModel.swift; sourceTree = "<group>"; };
 		B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 		B3A015222A8E04C200031470 /* CoffeeWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeWebService.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				B3A015282A8E0C4A00031470 /* OrderViewModel.swift */,
+				B30C5B282A9341A600E1FFE1 /* AddCoffeeOrderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				EF7DBC132A49B937001595AC /* NewsListTableViewController.swift in Sources */,
 				B30C5B272A933F4100E1FFE1 /* OrderCell.swift in Sources */,
 				EF7DBC1B2A49BE1D001595AC /* Webservice.swift in Sources */,
+				B30C5B292A9341A600E1FFE1 /* AddCoffeeOrderViewModel.swift in Sources */,
 				EF7DBC172A49BBA8001595AC /* Article.swift in Sources */,
 				B3A015232A8E04C200031470 /* CoffeeWebService.swift in Sources */,
 				EFACBB272A432CE80072CF9F /* ViewController.swift in Sources */,
