@@ -29,7 +29,7 @@ struct Order: Codable {
 
 extension Order {
     static var all: Resource<[Order]> = {
-        guard let url = URL(string: "https://5e08b9ed-7d65-4e58-a508-84f12b5c3ce4.mock.pstmn.io/sample") else { fatalError("URL is incorrect!") }
+        guard let url = URL(string: "https://warp-wiry-rugby.glitch.me/orders") else { fatalError("URL is incorrect!") }
         
         return Resource<[Order]>(url: url)
     }()
@@ -37,12 +37,12 @@ extension Order {
     static func create(vm: AddCoffeeOrderViewModel) -> Resource<Order?> {
         let order = Order(vm)
         
-        guard let url = URL(string: "") else { fatalError("URL is incorrect!") }
+        guard let url = URL(string: "https://warp-wiry-rugby.glitch.me/orders") else { fatalError("URL is incorrect!") }
         
         guard let data = try? JSONEncoder().encode(order) else { fatalError("Error encoding order!") }
         
         var resource = Resource<Order?>(url: url)
-        resource.httpMethod = HttpMethod.get
+        resource.httpMethod = HttpMethod.post
         resource.body = data
         
         return resource

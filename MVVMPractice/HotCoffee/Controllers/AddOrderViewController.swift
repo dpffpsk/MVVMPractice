@@ -31,6 +31,10 @@ class AddOrderViewController: UIViewController {
         setupLayout()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     func setupAttribute() {
         view.addSubview(tableView)
         view.addSubview(segmentedControl)
@@ -43,6 +47,8 @@ class AddOrderViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         
         firstTextField.placeholder = "first"
         firstTextField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -91,6 +97,10 @@ class AddOrderViewController: UIViewController {
         }
     }
     
+    @objc private func handleTap() {
+        self.view.endEditing(true)
+    }
+    
     @objc private func tappedCancelButton() {
         self.dismiss(animated: true)
     }
@@ -108,6 +118,15 @@ class AddOrderViewController: UIViewController {
         
         self.vm.selectedSize = selectedSize
         self.vm.selectedType = self.vm.types[indexPath.row]
+        
+        CoffeeWebService().load(resource: Order.create(vm: self.vm)) { result in
+            switch result {
+            case .success(let order):
+                print(order)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
