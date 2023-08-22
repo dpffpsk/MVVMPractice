@@ -8,7 +8,14 @@
 import UIKit
 import SnapKit
 
+protocol AddCoffeeOrderDelegate {
+    func addCoffeeOrderViewControllerDidSave(order: Order, controller: UIViewController)
+    func addCoffeeOrderViewControllerDidClose(controller: UIViewController)
+}
+
 class AddOrderViewController: UIViewController {
+    
+    var delegate: AddCoffeeOrderDelegate?
 
     let tableView = UITableView(frame: .zero, style: .plain)
 //    let segmentedControl = UISegmentedControl(items: ["Small", "Medium", "Large"])
@@ -102,7 +109,9 @@ class AddOrderViewController: UIViewController {
     }
     
     @objc private func tappedCancelButton() {
-        self.dismiss(animated: true)
+        if let delegate = self.delegate {
+            delegate.addCoffeeOrderViewControllerDidClose(controller: self)
+        }
     }
     
     @objc private func tappedSaveButton() {
@@ -122,7 +131,12 @@ class AddOrderViewController: UIViewController {
         CoffeeWebService().load(resource: Order.create(vm: self.vm)) { result in
             switch result {
             case .success(let order):
-                print(order)
+                if let order = order,
+                   let delegate = self.delegate {
+                    DispatchQueue.main.async {
+                        delegate.addCoffeeOrderViewControllerDidSave(order: order, controller: self)
+                    }
+                }
             case .failure(let error):
                 print(error)
             }

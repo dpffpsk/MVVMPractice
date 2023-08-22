@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OrdersTableViewController: UITableViewController {
+class OrdersTableViewController: UITableViewController, AddCoffeeOrderDelegate {
 
     var orderListViewModel = OrderListViewModel()
     let button = UIButton()
@@ -46,12 +46,24 @@ class OrdersTableViewController: UITableViewController {
         }
     }
     
+    func addCoffeeOrderViewControllerDidSave(order: Order, controller: UIViewController) {
+        controller.dismiss(animated: true, completion: nil)
+        
+        let orderVM = OrderViewModel(order: order)
+        self.orderListViewModel.ordersViewModel.append(orderVM)
+        self.tableView.insertRows(at: [IndexPath.init(row: self.orderListViewModel.ordersViewModel.count - 1, section: 0)], with: .automatic)
+    }
+    
+    func addCoffeeOrderViewControllerDidClose(controller: UIViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
     @objc private func tappedButton() {
         let modalVC = AddOrderViewController()
+        modalVC.delegate = self
         let naviVC = UINavigationController(rootViewController: modalVC)
         self.present(naviVC, animated: true)
     }
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
