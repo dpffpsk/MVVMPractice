@@ -11,7 +11,8 @@ import SnapKit
 class AddOrderViewController: UIViewController {
 
     let tableView = UITableView(frame: .zero, style: .plain)
-    let segmentedControl = UISegmentedControl(items: ["Small", "Medium", "Large"])
+//    let segmentedControl = UISegmentedControl(items: ["Small", "Medium", "Large"])
+    var segmentedControl: UISegmentedControl!
     let firstTextField = UITextField()
     let secondTextField = UITextField()
     let cancelButton = UIBarButtonItem()
@@ -23,6 +24,8 @@ class AddOrderViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = "Add New Order"
+
+        self.segmentedControl = UISegmentedControl(items: self.vm.sizes)
         
         setupAttribute()
         setupLayout()
@@ -41,8 +44,6 @@ class AddOrderViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        segmentedControl.selectedSegmentIndex = 0
-        
         firstTextField.placeholder = "first"
         firstTextField.borderStyle = UITextField.BorderStyle.roundedRect
         
@@ -51,11 +52,14 @@ class AddOrderViewController: UIViewController {
         
         cancelButton.title = "Cancel"
         cancelButton.style = .done
+        cancelButton.target = self
+        cancelButton.action = #selector(tappedCancelButton)
+        navigationItem.setLeftBarButton(cancelButton, animated: true)
         
         saveButton.title = "Save"
         saveButton.style = .done
-        
-        navigationItem.setLeftBarButton(cancelButton, animated: true)
+        saveButton.target = self
+        saveButton.action = #selector(tappedSaveButton)
         navigationItem.setRightBarButton(saveButton, animated: true)
     }
     
@@ -86,6 +90,25 @@ class AddOrderViewController: UIViewController {
             $0.height.equalTo(40)
         }
     }
+    
+    @objc private func tappedCancelButton() {
+        self.dismiss(animated: true)
+    }
+    
+    @objc private func tappedSaveButton() {
+        let name = firstTextField.text
+        let email = secondTextField.text
+        
+        let selectedSize = segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex)
+        
+        guard let indexPath = self.tableView.indexPathForSelectedRow else { fatalError("Error in selecting coffee") }
+        
+        self.vm.name = name
+        self.vm.email = email
+        
+        self.vm.selectedSize = selectedSize
+        self.vm.selectedType = self.vm.types[indexPath.row]
+    }
 }
 
 extension AddOrderViewController: UITableViewDataSource, UITableViewDelegate {
@@ -103,5 +126,13 @@ extension AddOrderViewController: UITableViewDataSource, UITableViewDelegate {
         cell.contentConfiguration = content
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
 }

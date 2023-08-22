@@ -36,13 +36,13 @@ class OrdersTableViewController: UITableViewController {
     
     private func populateOrders() {
         
-        guard let coffeeOrdersURL = URL(string: "https://5e08b9ed-7d65-4e58-a508-84f12b5c3ce4.mock.pstmn.io/sample") else {
-            fatalError("URL was incorrect")
-        }
+//        guard let coffeeOrdersURL = URL(string: "https://5e08b9ed-7d65-4e58-a508-84f12b5c3ce4.mock.pstmn.io/sample") else {
+//            fatalError("URL was incorrect")
+//        }
+//        
+//        let resource = Resource<[Order]>(url: coffeeOrdersURL)
         
-        let resource = Resource<[Order]>(url: coffeeOrdersURL)
-        
-        CoffeeWebService().load(resource: resource) { [weak self] result in
+        CoffeeWebService().load(resource: Order.all) { [weak self] result in
             switch result {
             case .success(let orders):
                 self?.orderListViewModel.ordersViewModel = orders.map(OrderViewModel.init)
