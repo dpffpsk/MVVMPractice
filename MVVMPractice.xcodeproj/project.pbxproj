@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B30C5B272A933F4100E1FFE1 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C5B262A933F4100E1FFE1 /* OrderCell.swift */; };
 		B30C5B292A9341A600E1FFE1 /* AddCoffeeOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C5B282A9341A600E1FFE1 /* AddCoffeeOrderViewModel.swift */; };
+		B30C5B2E2A958CFB00E1FFE1 /* WeatherListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C5B2D2A958CFB00E1FFE1 /* WeatherListTableViewController.swift */; };
+		B30C5B302A95905100E1FFE1 /* AddWeatherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C5B2F2A95905100E1FFE1 /* AddWeatherCityViewController.swift */; };
 		B38EFBBD2A85F48D00812875 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */; };
 		B38EFBBF2A85F53B00812875 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */; };
 		B38EFBC22A85FA2800812875 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B38EFBC12A85FA2800812875 /* SnapKit */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		B30C5B262A933F4100E1FFE1 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		B30C5B282A9341A600E1FFE1 /* AddCoffeeOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeOrderViewModel.swift; sourceTree = "<group>"; };
+		B30C5B2D2A958CFB00E1FFE1 /* WeatherListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListTableViewController.swift; sourceTree = "<group>"; };
+		B30C5B2F2A95905100E1FFE1 /* AddWeatherCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherCityViewController.swift; sourceTree = "<group>"; };
 		B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 		B3A015222A8E04C200031470 /* CoffeeWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeWebService.swift; sourceTree = "<group>"; };
@@ -69,6 +73,15 @@
 				B30C5B262A933F4100E1FFE1 /* OrderCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		B30C5B2C2A95865500E1FFE1 /* GoodWeather */ = {
+			isa = PBXGroup;
+			children = (
+				B30C5B2D2A958CFB00E1FFE1 /* WeatherListTableViewController.swift */,
+				B30C5B2F2A95905100E1FFE1 /* AddWeatherCityViewController.swift */,
+			);
+			path = GoodWeather;
 			sourceTree = "<group>";
 		};
 		B38EFBB92A85D1A200812875 /* HotCoffee */ = {
@@ -195,6 +208,7 @@
 				EFACBB2B2A432CE90072CF9F /* Assets.xcassets */,
 				EFACBB2D2A432CE90072CF9F /* LaunchScreen.storyboard */,
 				EFACBB302A432CE90072CF9F /* Info.plist */,
+				B30C5B2C2A95865500E1FFE1 /* GoodWeather */,
 				B38EFBB92A85D1A200812875 /* HotCoffee */,
 				EF7DBC0B2A49B6C1001595AC /* GoodNews */,
 			);
@@ -280,8 +294,10 @@
 			files = (
 				EF7DBC152A49BAC0001595AC /* ArticleTableViewCell.swift in Sources */,
 				EF7DBC132A49B937001595AC /* NewsListTableViewController.swift in Sources */,
+				B30C5B2E2A958CFB00E1FFE1 /* WeatherListTableViewController.swift in Sources */,
 				B30C5B272A933F4100E1FFE1 /* OrderCell.swift in Sources */,
 				EF7DBC1B2A49BE1D001595AC /* Webservice.swift in Sources */,
+				B30C5B302A95905100E1FFE1 /* AddWeatherCityViewController.swift in Sources */,
 				B30C5B292A9341A600E1FFE1 /* AddCoffeeOrderViewModel.swift in Sources */,
 				EF7DBC172A49BBA8001595AC /* Article.swift in Sources */,
 				B3A015232A8E04C200031470 /* CoffeeWebService.swift in Sources */,
@@ -445,6 +461,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,6 +490,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

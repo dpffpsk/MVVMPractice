@@ -34,6 +34,18 @@ class OrdersTableViewController: UITableViewController, AddCoffeeOrderDelegate {
         populateOrders()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = .systemBackground
+        
+        self.navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        self.navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.tintColor = .systemBlue
+    }
+    
     private func populateOrders() {
         CoffeeWebService().load(resource: Order.all) { [weak self] result in
             switch result {

@@ -14,12 +14,23 @@ class NewsListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "GoodNews"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        
         self.tableView.register(ArticleTableViewCell.self, forCellReuseIdentifier: "cell")
-        
+
+        self.navigationItem.title = "GoodNews"
+
         setup()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = .systemBackground
+        
+        self.navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        self.navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.tintColor = .systemBlue
     }
     
     private func setup() {

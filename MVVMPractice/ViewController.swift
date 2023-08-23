@@ -9,10 +9,31 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    let list = ["GoodNews", "Orders"]
+    let list = ["GoodNews", "Orders", "GoodWeather"]
+    let navigationBarAppearance = UINavigationBarAppearance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        self.navigationBarAppearance.backgroundColor = .systemBackground
+        self.navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        self.navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.tintColor = .systemBlue
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        self.navigationBarAppearance.backgroundColor = UIColor(displayP3Red: 52/255, green: 154/255, blue: 219/255, alpha: 1.0)
+        self.navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
+        self.navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        self.navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.tintColor = .white
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,6 +61,10 @@ class ViewController: UITableViewController {
             let orderVC = OrdersTableViewController()
 //            let orderVC = AddOrderViewController()
             self.navigationController?.pushViewController(orderVC, animated: true)
+        case 2:
+            print("index 2")
+            let weatherVC = WeatherListTableViewController()
+            self.navigationController?.pushViewController(weatherVC, animated: true)
         default:
             print("default")
         }
