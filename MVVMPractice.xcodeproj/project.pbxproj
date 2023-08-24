@@ -11,6 +11,7 @@
 		B30C5B292A9341A600E1FFE1 /* AddCoffeeOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C5B282A9341A600E1FFE1 /* AddCoffeeOrderViewModel.swift */; };
 		B30C5B2E2A958CFB00E1FFE1 /* WeatherListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C5B2D2A958CFB00E1FFE1 /* WeatherListTableViewController.swift */; };
 		B30C5B302A95905100E1FFE1 /* AddWeatherCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C5B2F2A95905100E1FFE1 /* AddWeatherCityViewController.swift */; };
+		B30C5B352A9718A800E1FFE1 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30C5B342A9718A800E1FFE1 /* WeatherCell.swift */; };
 		B38EFBBD2A85F48D00812875 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */; };
 		B38EFBBF2A85F53B00812875 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */; };
 		B38EFBC22A85FA2800812875 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B38EFBC12A85FA2800812875 /* SnapKit */; };
@@ -35,6 +36,7 @@
 		B30C5B282A9341A600E1FFE1 /* AddCoffeeOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoffeeOrderViewModel.swift; sourceTree = "<group>"; };
 		B30C5B2D2A958CFB00E1FFE1 /* WeatherListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListTableViewController.swift; sourceTree = "<group>"; };
 		B30C5B2F2A95905100E1FFE1 /* AddWeatherCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherCityViewController.swift; sourceTree = "<group>"; };
+		B30C5B342A9718A800E1FFE1 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 		B3A015222A8E04C200031470 /* CoffeeWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeWebService.swift; sourceTree = "<group>"; };
@@ -78,10 +80,27 @@
 		B30C5B2C2A95865500E1FFE1 /* GoodWeather */ = {
 			isa = PBXGroup;
 			children = (
+				B30C5B332A97188000E1FFE1 /* Cell */,
+				B30C5B322A97187700E1FFE1 /* Controllers */,
+			);
+			path = GoodWeather;
+			sourceTree = "<group>";
+		};
+		B30C5B322A97187700E1FFE1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				B30C5B2D2A958CFB00E1FFE1 /* WeatherListTableViewController.swift */,
 				B30C5B2F2A95905100E1FFE1 /* AddWeatherCityViewController.swift */,
 			);
-			path = GoodWeather;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B30C5B332A97188000E1FFE1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B30C5B342A9718A800E1FFE1 /* WeatherCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		B38EFBB92A85D1A200812875 /* HotCoffee */ = {
@@ -294,6 +313,7 @@
 			files = (
 				EF7DBC152A49BAC0001595AC /* ArticleTableViewCell.swift in Sources */,
 				EF7DBC132A49B937001595AC /* NewsListTableViewController.swift in Sources */,
+				B30C5B352A9718A800E1FFE1 /* WeatherCell.swift in Sources */,
 				B30C5B2E2A958CFB00E1FFE1 /* WeatherListTableViewController.swift in Sources */,
 				B30C5B272A933F4100E1FFE1 /* OrderCell.swift in Sources */,
 				EF7DBC1B2A49BE1D001595AC /* Webservice.swift in Sources */,
