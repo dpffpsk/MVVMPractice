@@ -25,7 +25,7 @@ class AddWeatherCityViewController: UIViewController {
         btn.setTitle("Save", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.backgroundColor = .systemBlue
-        btn.addTarget(self, action: #selector(close), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(saveCityButtonPressed), for: .touchUpInside)
         return btn
     }()
     
@@ -60,7 +60,7 @@ class AddWeatherCityViewController: UIViewController {
         
         self.closeButton.style = .done
         self.closeButton.title = "Close"
-        
+        self.closeButton.action = #selector(close)
         navigationItem.setLeftBarButton(closeButton, animated: true)
     }
     
@@ -83,7 +83,25 @@ class AddWeatherCityViewController: UIViewController {
         }
     }
     
+    // Close 버튼 이벤트
     @objc func close() {
         self.dismiss(animated: true)
+    }
+    
+    // Save 버튼 이벤트
+    @objc func saveCityButtonPressed() {
+        let api_key = ""
+        
+        if let city = textField.text {
+            let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(api_key)&units=imperial")!
+            
+            let weatherResources = Resources<Any>(url: weatherURL) { data in
+                return data
+            }
+            
+            Webservices().load(resources: weatherResources) { result in
+                
+            }
+        }
     }
 }
