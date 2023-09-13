@@ -17,8 +17,6 @@ final class Webservices {
         
         URLSession.shared.dataTask(with: resources.url) { data, response, error in
             
-            print(data)
-            
             if let data = data {
                 DispatchQueue.main.async {
                     completion(resources.parse(data))

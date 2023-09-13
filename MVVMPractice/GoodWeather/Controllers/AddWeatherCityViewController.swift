@@ -7,10 +7,17 @@
 
 import UIKit
 
+protocol AddWeatherDelegate {
+    func addWeatherDidSave(vm: WeatherViewModel)
+}
+
 class AddWeatherCityViewController: UIViewController {
 
     let closeButton = UIBarButtonItem()
     let navigationBarAppearance = UINavigationBarAppearance()
+    private var addWeatherVM = AddWeatherViewModel()
+    
+    var delegate: AddWeatherDelegate?
     
     lazy var textField: UITextField = {
         let textField = UITextField()
@@ -57,10 +64,10 @@ class AddWeatherCityViewController: UIViewController {
     }
     
     private func setupNavigation() {
-        
         self.closeButton.style = .done
         self.closeButton.title = "Close"
         self.closeButton.action = #selector(close)
+        self.closeButton.target = self
         navigationItem.setLeftBarButton(closeButton, animated: true)
     }
     
@@ -90,17 +97,11 @@ class AddWeatherCityViewController: UIViewController {
     
     // Save 버튼 이벤트
     @objc func saveCityButtonPressed() {
-        let api_key = ""
-        
+
         if let city = textField.text {
-            let weatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(api_key)&units=imperial")!
-            
-            let weatherResources = Resources<Any>(url: weatherURL) { data in
-                return data
-            }
-            
-            Webservices().load(resources: weatherResources) { result in
-                
+            addWeatherVM.addWeather(for: city) { (vm) in
+                self.delegate?.addWeatherDidSave(vm: vm)
+                self.dismiss(animated: true)
             }
         }
     }

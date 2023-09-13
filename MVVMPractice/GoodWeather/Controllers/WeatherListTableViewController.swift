@@ -7,9 +7,11 @@
 
 import UIKit
 
-class WeatherListTableViewController: UITableViewController {
+class WeatherListTableViewController: UITableViewController, AddWeatherDelegate {
+    
     let plusButton = UIButton()
     let settingsButton = UIBarButtonItem()
+    private var weatherListViewModel = WeatherListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +58,14 @@ class WeatherListTableViewController: UITableViewController {
     // plusButton action
     @objc func tappedPlusButton() {
         let addWeatherVC = AddWeatherCityViewController()
+        addWeatherVC.delegate = self
         let naviVC = UINavigationController(rootViewController: addWeatherVC)
         self.present(naviVC, animated: true)
+    }
+    
+    func addWeatherDidSave(vm: WeatherViewModel) {
+        weatherListViewModel.addWeatherViewModel(vm)
+        self.tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -65,15 +73,17 @@ class WeatherListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return weatherListViewModel.numberOfRows(section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as? WeatherCell else { return UITableViewCell() }
 
-        cell.cityLabel.text = "Houston"
-        cell.temperatureLabel.text = "70°"
+        let weatherVM = weatherListViewModel.modelAt(indexPath.row)
+        
+        cell.cityLabel.text = weatherVM.city
+        cell.temperatureLabel.text = weatherVM.temperature.formatAsDegree()
         
         return cell
     }
