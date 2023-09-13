@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    let list = ["GoodNews", "Orders", "GoodWeather"]
+    let list = ["GoodNews", "Orders", "GoodWeather", "Bluetooth"]
     let navigationBarAppearance = UINavigationBarAppearance()
     
     override func viewDidLoad() {
@@ -65,9 +65,12 @@ class ViewController: UITableViewController {
             print("index 2")
             let weatherVC = WeatherListTableViewController()
             self.navigationController?.pushViewController(weatherVC, animated: true)
+        case 3:
+            print("index 3")
+            let BluetoothVC = BluetoothViewController()
+            self.navigationController?.pushViewController(BluetoothVC, animated: true)
         default:
             print("default")
         }
     }
 }
-
