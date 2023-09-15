@@ -20,7 +20,6 @@ class AddWeatherViewModel {
         Webservices().load(resources: weatherResource) { (result) in
             if let weatherResource = result {
                 let vm = WeatherViewModel(weather: weatherResource)
-//                completion(vm)
                 completion(vm)
             }
         }
