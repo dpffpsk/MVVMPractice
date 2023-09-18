@@ -48,14 +48,23 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
         // setting button
         self.settingsButton.title = "Settings"
         self.settingsButton.style = .done
+        self.settingsButton.action = #selector(tappedSettingsButton)
+        self.settingsButton.target = self
         navigationItem.setLeftBarButton(settingsButton, animated: true)
     }
     
     private func setupTableView() {
         tableView.register(WeatherCell.self, forCellReuseIdentifier: "WeatherCell")
     }
+    
+    // Settings 버튼 action
+    @objc func tappedSettingsButton() {
+        let settingsVC = SettingsTableViewController()
+        let naviVC = UINavigationController(rootViewController: settingsVC)
+        self.present(naviVC, animated: true)
+    }
 
-    // plusButton action
+    // + 버튼 action
     @objc func tappedPlusButton() {
         let addWeatherVC = AddWeatherCityViewController()
         addWeatherVC.delegate = self
@@ -81,7 +90,7 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as? WeatherCell else { return UITableViewCell() }
 
         let weatherVM = weatherListViewModel.modelAt(indexPath.row)
-        
+         
         cell.cityLabel.text = weatherVM.city
         cell.temperatureLabel.text = weatherVM.temperature.formatAsDegree()
         
