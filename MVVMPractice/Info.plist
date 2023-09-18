@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationDefaultAccuracyReduced</key>
+	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>위치 좀 써도 될까?(포그라운드에서 실행 중일 때만 위치 정보에 엑세스 ios11 이상)</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>위치 좀 써도 될까?(백그라운드에서 실행되는 동안 위치 정보에 엑세스 ios11  이상)</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>블루투스를 사용하시겠습니까?</string>
 	<key>UIApplicationSceneManifest</key>

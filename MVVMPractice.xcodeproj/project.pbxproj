@@ -20,6 +20,9 @@
 		B33190592AB0028800F0C8F1 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33190582AB0028800F0C8F1 /* WeatherListViewModel.swift */; };
 		B331905C2AB1889100F0C8F1 /* BluetoothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B331905B2AB1889100F0C8F1 /* BluetoothViewController.swift */; };
 		B331905E2AB18EE600F0C8F1 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B331905D2AB18EE600F0C8F1 /* Double+Extensions.swift */; };
+		B38B279B2AB80A39004F8F9F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B279A2AB80A39004F8F9F /* SettingsTableViewController.swift */; };
+		B38B279D2AB80B7D004F8F9F /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B279C2AB80B7D004F8F9F /* SettingsViewModel.swift */; };
+		B38B27A02AB81906004F8F9F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B279F2AB81906004F8F9F /* MapViewController.swift */; };
 		B38EFBBD2A85F48D00812875 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */; };
 		B38EFBBF2A85F53B00812875 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */; };
 		B38EFBC22A85FA2800812875 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B38EFBC12A85FA2800812875 /* SnapKit */; };
@@ -53,6 +56,9 @@
 		B33190582AB0028800F0C8F1 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
 		B331905B2AB1889100F0C8F1 /* BluetoothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothViewController.swift; sourceTree = "<group>"; };
 		B331905D2AB18EE600F0C8F1 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		B38B279A2AB80A39004F8F9F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		B38B279C2AB80B7D004F8F9F /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		B38B279F2AB81906004F8F9F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B38EFBBC2A85F48D00812875 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		B38EFBBE2A85F53B00812875 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 		B3A015222A8E04C200031470 /* CoffeeWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeWebService.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 			children = (
 				B30C5B2D2A958CFB00E1FFE1 /* WeatherListTableViewController.swift */,
 				B30C5B2F2A95905100E1FFE1 /* AddWeatherCityViewController.swift */,
+				B38B279A2AB80A39004F8F9F /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -145,6 +152,7 @@
 			children = (
 				B33190502AAFFEDA00F0C8F1 /* AddWeatherViewModel.swift */,
 				B33190582AB0028800F0C8F1 /* WeatherListViewModel.swift */,
+				B38B279C2AB80B7D004F8F9F /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -172,6 +180,14 @@
 				B331905B2AB1889100F0C8F1 /* BluetoothViewController.swift */,
 			);
 			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		B38B279E2AB818EF004F8F9F /* GPS */ = {
+			isa = PBXGroup;
+			children = (
+				B38B279F2AB81906004F8F9F /* MapViewController.swift */,
+			);
+			path = GPS;
 			sourceTree = "<group>";
 		};
 		B38EFBB92A85D1A200812875 /* HotCoffee */ = {
@@ -298,6 +314,7 @@
 				EFACBB2B2A432CE90072CF9F /* Assets.xcassets */,
 				EFACBB2D2A432CE90072CF9F /* LaunchScreen.storyboard */,
 				EFACBB302A432CE90072CF9F /* Info.plist */,
+				B38B279E2AB818EF004F8F9F /* GPS */,
 				B331905A2AB17E0600F0C8F1 /* Bluetooth */,
 				B30C5B2C2A95865500E1FFE1 /* GoodWeather */,
 				B38EFBB92A85D1A200812875 /* HotCoffee */,
@@ -400,6 +417,8 @@
 				B331905E2AB18EE600F0C8F1 /* Double+Extensions.swift in Sources */,
 				B331904E2AAFF33400F0C8F1 /* WeatherResponse.swift in Sources */,
 				B3A015232A8E04C200031470 /* CoffeeWebService.swift in Sources */,
+				B38B27A02AB81906004F8F9F /* MapViewController.swift in Sources */,
+				B38B279B2AB80A39004F8F9F /* SettingsTableViewController.swift in Sources */,
 				EFACBB272A432CE80072CF9F /* ViewController.swift in Sources */,
 				B33190512AAFFEDA00F0C8F1 /* AddWeatherViewModel.swift in Sources */,
 				B3A015262A8E074800031470 /* Order.swift in Sources */,
@@ -409,6 +428,7 @@
 				B3A015292A8E0C4A00031470 /* OrderViewModel.swift in Sources */,
 				EFACBB252A432CE80072CF9F /* SceneDelegate.swift in Sources */,
 				B38EFBBD2A85F48D00812875 /* OrdersTableViewController.swift in Sources */,
+				B38B279D2AB80B7D004F8F9F /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
