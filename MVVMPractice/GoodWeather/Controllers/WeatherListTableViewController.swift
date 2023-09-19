@@ -7,17 +7,23 @@
 
 import UIKit
 
-class WeatherListTableViewController: UITableViewController, AddWeatherDelegate {
+class WeatherListTableViewController: UITableViewController, AddWeatherDelegate, SettingsDelegate {
     
     let plusButton = UIButton()
     let settingsButton = UIBarButtonItem()
     private var weatherListViewModel = WeatherListViewModel()
+    private var lastUnitSelection: Unit!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigation()
         setupTableView()
+        
+        let userDefaults = UserDefaults.standard
+        if let value = userDefaults.value(forKey: "unit") as? String {
+            self.lastUnitSelection = Unit(rawValue: value)!
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,6 +66,7 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
     // Settings 버튼 action
     @objc func tappedSettingsButton() {
         let settingsVC = SettingsTableViewController()
+        settingsVC.delegate = self
         let naviVC = UINavigationController(rootViewController: settingsVC)
         self.present(naviVC, animated: true)
     }
@@ -72,9 +79,19 @@ class WeatherListTableViewController: UITableViewController, AddWeatherDelegate 
         self.present(naviVC, animated: true)
     }
     
+    // AddWeatherDelegate
     func addWeatherDidSave(vm: WeatherViewModel) {
         weatherListViewModel.addWeatherViewModel(vm)
         self.tableView.reloadData()
+    }
+    
+    // SettingsDelegate
+    func settingsDone(vm: SettingsViewModel) {
+        if lastUnitSelection.rawValue != vm.selectedUnit.rawValue {
+            weatherListViewModel.updateUnit(to: vm.selectedUnit)
+            self.tableView.reloadData()
+            lastUnitSelection = Unit(rawValue: vm.selectedUnit.rawValue)!
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

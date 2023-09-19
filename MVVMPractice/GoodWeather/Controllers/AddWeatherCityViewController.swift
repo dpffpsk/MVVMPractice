@@ -97,7 +97,6 @@ class AddWeatherCityViewController: UIViewController {
     
     // Save 버튼 이벤트
     @objc func saveCityButtonPressed() {
-
         if let city = textField.text {
             addWeatherVM.addWeather(for: city) { (vm) in
                 self.delegate?.addWeatherDidSave(vm: vm)

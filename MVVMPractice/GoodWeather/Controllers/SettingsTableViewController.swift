@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol SettingsDelegate {
+    func settingsDone(vm: SettingsViewModel)
+}
+
 class SettingsTableViewController: UITableViewController {
 
     let doneButton = UIBarButtonItem()
     private var settingsViewModel = SettingsViewModel()
     let navigationBarAppearance = UINavigationBarAppearance()
+    var delegate: SettingsDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +59,11 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @objc private func tappedDoneButton() {
+        if let delegate = self.delegate {
+            delegate.settingsDone(vm: settingsViewModel)
+        }
         
+        self.dismiss(animated: true)
     }
     
     private func setupTableView() {
@@ -65,27 +74,6 @@ class SettingsTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return settingsViewModel.units.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let settingItem = settingsViewModel.units[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
-        
-        var content = cell.defaultContentConfiguration()
-        content.text = settingItem.displayName
-        cell.contentConfiguration = content
-        
-        if settingItem == settingsViewModel.selectedUnit {
-            cell.accessoryType = .checkmark
-        }
-        
-        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -107,5 +95,27 @@ class SettingsTableViewController: UITableViewController {
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .none
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return settingsViewModel.units.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let settingItem = settingsViewModel.units[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = settingItem.displayName
+        cell.contentConfiguration = content
+        
+        if settingItem == settingsViewModel.selectedUnit {
+            cell.accessoryType = .checkmark
+        }
+        
+        return cell
     }
 }
