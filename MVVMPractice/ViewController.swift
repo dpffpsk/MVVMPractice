@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    let list = ["GoodNews", "Orders", "GoodWeather", "Bluetooth", "Map"]
+    let list = ["GoodNews", "Orders", "GoodWeather", "Bluetooth", "Map", "Binding"]
     let navigationBarAppearance = UINavigationBarAppearance()
     
     override func viewDidLoad() {
@@ -74,6 +74,10 @@ class ViewController: UITableViewController {
             let mapVC = MapViewController()
             self.present(mapVC, animated: true)
 //            self.navigationController?.pushViewController(mapVC, animated: true)
+        case 5:
+            print("index 5")
+            let bindingVC = BindingViewController()
+            self.navigationController?.pushViewController(bindingVC, animated: true)
         default:
             print("default")
         }
