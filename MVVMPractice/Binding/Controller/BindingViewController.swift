@@ -46,6 +46,7 @@ class BindingViewController: UIViewController {
         loginVM.password.bind { [weak self] text in
             self?.passwordTextField.text = text
         }
+        
         setupUI()
     }
     

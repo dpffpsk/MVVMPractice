@@ -27,7 +27,6 @@ class BindingTextField: UITextField {
     }
     
     @objc func textFieldDidChanged(_ textField: UITextField) {
-        
         if let text = textField.text {
             textChanged(text)
         }
